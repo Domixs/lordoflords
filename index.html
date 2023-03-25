@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Webpage</title>
+		<style>
+				h1 {
+			padding: 20px;
+		}
+			
+			h1 {
+			color: rgb(9, 9, 206);
+			
+		}
+		h2{
+			color: #7117e7;
+		}
+		h3{
+			color: #e90909;
+		}
+		p {
+			color: rgb(0, 128, 128);
+		}body {
+			color: rgb(255, 0, 0);
+		}
+		body {
+			background-color: rgb(32, 230, 14);
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		nav {
+			background-color: #333;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			padding: 10px;
+		}
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		nav li {
+			display: inline-block;
+			margin-right: 20px;
+		}
+		nav a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 18px;
+			padding: 10px;
+			border-radius: 5px;
+		}
+		nav a:hover {
+			background-color: #555;
+		}
+			table {
+		    margin-top: 50px;
+		    border-collapse: collapse;
+		    width: 100%;
+	    }
+
+	    th, td {
+		    padding: 8px;
+		    text-align: left;
+		    border-bottom: 1px solid #ddd;
+	    }
+
+	    tr,th { 
+		    background-color: rgb(0, 0, 0);
+		    color: rgb(113, 194, 8);
+	    }
+	    footer {
+	        background-color: #333;
+	        color: #ffffff;
+        	padding: 10px;
+	        position: relative;
+        	bottom: 0;
+        	left: 0;
+        	width: 100%;
+        	text-align: center;
+        }
+		.faq-box {
+            border: 1px solid #13ca13;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .faq-box h2 {
+            font-size: 24px;
+            margin-top: 0;
+        }
+        .faq-box h3 {
+  font-size: 18px;
+        }
+        .faq-box p {
+            margin-top: 5px;
+        }
+
+
+	</style>
+</head>
+<body>
+	<h1>Search Engine Example</h1>
+	<input type="text" id="search-box" placeholder="Enter search term...">
+	<button onclick="search()">Search</button>
+	<div id="search-results"></div>
+	<script>
+		function search() {
+			var searchTerm = document.getElementById("search-box").value;
+			var content = document.body.innerText;
+			var searchResults = document.getElementById("search-results");
+
+			searchResults.innerHTML = "";
+
+			if (content.indexOf(searchTerm) > -1) {
+				var searchIndex = content.indexOf(searchTerm);
+				searchResults.innerHTML += "<p>Found at position " + searchIndex + "</p>";
+			} else {
+				searchResults.innerHTML += "<p>No results found.</p>";
+			}
+		}
+		function toggleDropdown() {
+  var dropdownContent = document.getElementById("dropdown-content");
+  dropdownContent.classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropdown-btn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+	</script>
+	<nav>
+		<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="service.html">Services</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="login.php">login</a></li>
+			<li><a href="registration.php">registration</a></li>
+		</ul>
+	</nav>
+<section>
+	<footer>
+		<h2>Copyright &copy;2023 Domix limited</h2>
+		<div class="faq-box">
+			<h3>Frequently Asked Questions&quest;</h3>
+			<ul>
+			  <li>
+				<h3>How do I create an account?</h3>
+				<p>To create an account, click the "Sign Up" button on the top right corner of the page and follow the instructions.</p>
+			  </li>
+			  <li>
+				<h3>What payment methods do you accept?</h3>
+				<p>We accept Visa, Mastercard, American Express, and PayPal.</p>
+			  </li>
+			  <li>
+				<h3>How long does shipping take?</h3>
+				<p>Shipping times vary depending on your location and the shipping method you choose at checkout. Standard shipping usually takes 3-5 business days, while express shipping takes 1-2 business days.</p>
+			  </li>
+			</ul>
+		  </div>
+	</footer>
+</section>
+	
+</body>
+</html>
